@@ -21,9 +21,9 @@ const questions = [
   new Question(
     "What does HTML stand for?",
     [
-      "A : Hyper Text Markup Language",
-      "B : Hyperlinks and Text Markup Language",
-      "C : Home Tool Markup Language",
+      "A : Hyper Text Markup Language", 
+      "B : Hyperlinks and Text Markup Language", 
+      "C : Home Tool Markup Language", 
       null,
     ],
     "A : Hyper Text Markup Language"
@@ -31,10 +31,10 @@ const questions = [
   new Question(
     "Who is marking the Web standards?",
     [
-      "A : Microsoft",
-      "B : Google",
-      "C : The World Wide Web Consortium",
-      "D : Mozilla",
+      "A : Microsoft", 
+      "B : Google", 
+      "C : The World Wide Web Consortium", 
+      "D : Mozilla", 
     ],
     "C : The World Wide Web Consortium"
   ),
@@ -320,8 +320,9 @@ function updateQuiz() {
   } else {
     previousBtn.style.display = "inline-block";
   }
+    submitBtn.style.display = "none";
+    retryBtn.style.display = "none";
 
-  // console.log(idx);
   questionCount();
 }
 
@@ -336,27 +337,29 @@ const btn = document.querySelectorAll(".btn");
 
 // 입력 및 정답 확인 함수
 function checkAnswer(i) {
-  btn[i].addEventListener("click", function () {
+  btn[i].addEventListener("click", clickAnswer);
+
+  function clickAnswer() {
     const answer = btn[i].innerText;
-
+  
     // console.log(quiz.questions[quiz.questionIndex].answer)
-
+  
     const correct = quiz.questions[quiz.questionIndex].answer.substr(0, 1);
-
+  
     if (quiz.correctAnswer(answer)) {
       alert("🟢정답입니다");
       quiz.score++;
     } else {
       alert(`❌틀렸습니다. 정답은 "${correct}" 입니다.`);
     }
-
+  
     if (quiz.questionIndex < quiz.questions.length - 1) {
       quiz.questionIndex++;
       updateQuiz();
     } else {
       result();
     }
-  });
+  }
 }
 
 // 뒤로가기 버튼 추가
@@ -371,11 +374,12 @@ function showPrevious() {
 
 previousBtn.addEventListener("click", showPrevious);
 
+
 function result() {
   const quizDiv = document.getElementById("quiz");
   // 정수로 점수 표현
   const per = parseInt((quiz.score * 100) / quiz.questions.length);
-
+  
   const txt =
     "<h1>결과</h1>" +
     "<h2>당신의 점수: " +
@@ -385,41 +389,45 @@ function result() {
     "/" +
     quiz.questions.length +
     " )" +
-    "</h2>" +
-    `<span>
-    <button id="submitbutton" class="result-btn"> 결과확인 </button>
-    </span>
-    <span>
-    <button id="retry" class="result-btn"> 재도전 </button>
-    </span></br>`;
+    "</h2>" ;
 
-  quizDiv.innerHTML = txt;
+    quizDiv.innerHTML = txt;
 
-  const submitBtn = document.getElementById("submitbutton");
+  submitBtn.style.display = "inline-block";
+  retryBtn.style.display = "inline-block";
+}
 
-  submitBtn.addEventListener("click", showResult);
+// 결과확인 버튼
+const submitBtn = document.getElementById("submitbutton");
 
-  function showResult(i) {
-    // const answers = checkAnswer(i).innerText;
-    // const answerDisplay = answers[quiz.questionIndex];
-    // if (quiz.correctAnswer(answers)) {
-    //   answerDisplay.style.color = 'blue';
-    // } else {
-    //   answerDisplay.style.color = 'red';
-    // }
-  }
+submitBtn.addEventListener("click", showResult);
+
+function showResult() {
+  const answerCheck = document.getElementById("result");
   
-  // 재시작 버튼
-  const retryBtn = document.getElementById("retry");
+  // checkAnswer.innerHTML = questions;
+  for ( let idx = 1; idx < questions.length; idx++ ) {
+    const txt = 
+    `<h3>문제 ${idx}:</h3>` +
+    questions[idx].text + "</br>" +
+    questions[idx].choice + "</br>" ;
 
-  retryBtn.addEventListener("click", retry);
-
-  function retry() {
-    if (quiz.questionIndex + 1 === quiz.questions.length) {
-      window.location.reload(true);
-    }
+    answerCheck.innerHTML = txt;
   }
-  console.log(quiz.questions[0]);
+
+  // document.write(question); 
+  console.log(questions.length);
+}
+
+// 재시작 버튼
+const retryBtn = document.getElementById("retry");
+
+retryBtn.addEventListener("click", retry);
+
+function retry() {
+  if (quiz.questionIndex + 1 === quiz.questions.length) {
+    window.location.reload(true);
+  }
 }
 
 for (let i = 0; i < btn.length; i++) {
