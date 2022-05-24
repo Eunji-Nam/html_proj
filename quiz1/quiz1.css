@@ -13,7 +13,7 @@ body {
  }
  
  .grid h1 {
-    color: rgb(85, 81, 95);
+    color: rgb(223, 119, 0);
     font-size: 2.4em;
     text-align: center;
  }
@@ -22,18 +22,20 @@ body {
     padding: 5px;
     border-radius: 15px;
     font-size: 24px;
+    color: #504435;
  }
  
  #quiz {
     text-align: center;
  }
  
- #footer {
+ #questionCount {
+    margin-left: 50px;
     font-size: 20px;
-    color: #2b2b2b;
+    color: #504435;
  }
  
- .buttons {
+ .answerbuttons {
     padding: 0px 20px;
     border-bottom: 2px solid #eb890a;
  }
@@ -49,13 +51,40 @@ body {
     border-radius: 15px;
     cursor: pointer;
     transition: all .2s;
- }
- 
- .btn:nth-child(2n) {
-    margin-right: 0;
+    user-select: none;
  }
  
  .btn:hover {
     background: #8d7b63;
     color: #fff;
  }
+
+ .buttons {
+    margin-right: 250px;
+ }
+
+ .quiz-btn {
+   padding: 10px;
+   color: #eb890a;
+   border: 1.5px solid #eb890a;
+   border-radius: 15px;
+   font-weight: 600;
+   cursor: pointer;
+   user-select: none;
+}
+
+.quiz-btn:hover {
+   color: #8d7b63;
+   border: 1.5px solid #8d7b63;
+   transition: all .2s;
+}
+
+.result-btn {
+   padding: 10px;
+   color: #eb890a;
+   border: 1.5px solid #eb890a;
+   border-radius: 10px;
+   font-weight: 600;
+   cursor: pointer;
+   user-select: none;
+}

@@ -17,277 +17,281 @@ Quiz.prototype.correctAnswer = function (answer) {
   return answer == this.questions[this.questionIndex].answer;
 };
 
- const questions = [
+const questions = [
   new Question(
     "What does HTML stand for?",
     [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
+      "A : Hyper Text Markup Language",
+      "B : Hyperlinks and Text Markup Language",
+      "C : Home Tool Markup Language",
       null,
     ],
-    "Hyper Text Markup Language"
+    "A : Hyper Text Markup Language"
   ),
   new Question(
     "Who is marking the Web standards?",
-    ["Microsoft", "Google", "The World Wide Web Consortium", "Mozilla"],
-    "The World Wide Web Consortium"
+    [
+      "A : Microsoft",
+      "B : Google",
+      "C : The World Wide Web Consortium",
+      "D : Mozilla",
+    ],
+    "C : The World Wide Web Consortium"
   ),
   new Question(
     "Choose the correct HTML element for the largest heading",
-    ["‹h6›", "‹heading›", "‹h1›", "‹head›"],
-    "‹h1›"
-  ),
-  new Question(
-    "What is the correct HTML element for inserting a line break?",
-    ["‹lb›", "‹br›", "‹break›", null],
-    "‹br›"
-  ),
-  new Question(
-    "What is the correct HTML for adding a background color?",
-    [
-      '‹body bg="yellow"›',
-      "‹background›yellow‹/background›",
-      '‹body style="background-color:yellow"›',
-      null,
-    ],
-    '‹body style="background-color:yellow"›'
+    ["A : ‹h6›", "B : ‹heading›", "C : ‹h1›", "D : ‹head›"],
+    "C : ‹h1›"
   ),
   // new Question(
+  //   "What is the correct HTML element for inserting a line break?",
+  //   ["A : ‹lb›", "B : ‹br›", "C : ‹break›", null],
+  //   "B : ‹br›"
+  // ),
+  // new Question(
+  //   "What is the correct HTML for adding a background color?",
+  //   [
+  //     'A : ‹body bg="yellow"›',
+  //     "B : ‹background›yellow‹/background›",
+  //     'C : ‹body style="background-color:yellow"›',
+  //     null,
+  //   ],
+  //   'C : ‹body style="background-color:yellow"›'
+  // ),
+  // new Question(
   //   "Choose the correct HTML element to define important text",
-  //   ["‹b›", "‹i›", "‹important›", "‹strong›"],
-  //   "‹strong›"
+  //   ["A : ‹b›", "B : ‹i›", "C : ‹important›", "D : ‹strong›"],
+  //   "D : ‹strong›"
   // ),
   // new Question(
   //   "Choose the correct HTML element to define emphasized text",
-  //   ["‹i›", "‹italic›", "‹em›", null],
-  //   "‹em›"
+  //   ["A : ‹i›", "B : ‹italic›", "C : ‹em›", null],
+  //   "C : ‹em›"
   // ),
   // new Question(
   //   "What is the correct HTML for creating a hyperlink?",
   //   [
-  //     "‹a›http://www.w3schools.com‹/a›",
-  //     '‹a name="http://www.w3schools.com"›W3Schools‹/a›',
-  //     '‹a href="http://www.w3schools.com"›W3Schools‹/a›',
-  //     '‹a url="http://www.w3schools.com"›W3Schools‹/a›',
+  //     "A : ‹a›http://www.w3schools.com‹/a›",
+  //     'B : ‹a name="http://www.w3schools.com"›W3Schools‹/a›',
+  //     'C : ‹a href="http://www.w3schools.com"›W3Schools‹/a›',
+  //     'D : ‹a url="http://www.w3schools.com"›W3Schools‹/a›',
   //   ],
-  //   '‹a href="http://www.w3schools.com"›W3Schools‹/a›'
+  //   'C : ‹a href="http://www.w3schools.com"›W3Schools‹/a›'
   // ),
   // new Question(
   //   "Which character is used to indicate an end tag?",
-  //   ["/", "*", "‹", "^"],
-  //   "/"
+  //   ["A : /", "B : *", "C : ‹", "^"],
+  //   "A : /"
   // ),
   // new Question(
   //   "How can you open a link in a new tab/browser window?",
   //   [
-  //     '‹a href="url" target="new"›',
-  //     '‹a href="url" target="_blank"›',
-  //     '‹a href="url" new›',
+  //     'A : ‹a href="url" target="new"›',
+  //     'B : ‹a href="url" target="_blank"›',
+  //     'C : ‹a href="url" new›',
   //     null,
   //   ],
-  //   '‹a href="url" target="_blank"›'
+  //   'B : ‹a href="url" target="_blank"›'
   // ),
   // new Question(
   //   "Which of these elements are all ‹table› elements?",
   //   [
-  //     "‹table›‹head›‹tfoot›",
-  //     "‹table›‹tr›‹tt›",
-  //     "‹table›‹tr›‹td›",
-  //     "‹thead›‹body›‹tr›",
+  //     "A : ‹table›‹head›‹tfoot›",
+  //     "B : ‹table›‹tr›‹tt›",
+  //     "C : ‹table›‹tr›‹td›",
+  //     "D : ‹thead›‹body›‹tr›",
   //   ],
-  //   "‹table›‹tr›‹td›"
+  //   "C : ‹table›‹tr›‹td›"
   // ),
   // new Question(
   //   "Inline elements are normally displayed without starting a new line.",
-  //   ["True", "False", null, null],
-  //   "True"
+  //   ["A : True", "B : False", null, null],
+  //   "A : True"
   // ),
   // new Question(
   //   "How can you make a numbered list?",
-  //   ["‹ul›", "‹ol›", "‹dl›", "‹list›"],
-  //   "‹ol›"
+  //   ["A : ‹ul›", "B : ‹ol›", "C : ‹dl›", "D : ‹list›"],
+  //   "B : ‹ol›"
   // ),
   // new Question(
   //   "How can you make a bulleted list?",
-  //   ["‹ol›", "‹dl›", "‹ul›", "‹list›"],
-  //   "‹ul›"
+  //   ["A : ‹ol›", "B : ‹dl›", "C : ‹ul›", "D : ‹list›"],
+  //   "C : ‹ul›"
   // ),
   // new Question(
   //   "what is the correct HTML for making a checkbox?",
   //   [
-  //     '‹input type="checkbox"›',
-  //     "‹check›",
-  //     "‹checkbox›",
-  //     '‹input type="check"›',
+  //     'A : ‹input type="checkbox"›',
+  //     "B : ‹check›",
+  //     "C : ‹checkbox›",
+  //     'D : ‹input type="check"›',
   //   ],
-  //   '‹input type="checkbox"›'
+  //   'A : ‹input type="checkbox"›'
   // ),
   // new Question(
   //   "What is the correct HTML for making a text input field?",
   //   [
-  //     '‹textinput type="text"›',
-  //     "‹textfield›",
-  //     '‹input type="textfield"›',
-  //     '‹input type="text"›',
+  //     'A : ‹textinput type="text"›',
+  //     "B : ‹textfield›",
+  //     'C : ‹input type="textfield"›',
+  //     'D : ‹input type="text"›',
   //   ],
-  //   '‹input type="text"›'
+  //   'D : ‹input type="text"›'
   // ),
   // new Question(
   //   "What is the correct HTML for making a drop-down list?",
-  //   ["‹list›", '‹input type="list"›', "‹select›", '‹input type="dropdown"›'],
-  //   "‹select›"
+  //   ["A : ‹list›", 'B : ‹input type="list"›', "C : ‹select›", 'D : ‹input type="dropdown"›'],
+  //   "C : ‹select›"
   // ),
   // new Question(
   //   "What is the correct HTML for making a text area?",
-  //   ['‹input type="textarea"›', "‹textarea›", '‹input type="textbox"›', null],
-  //   "‹textarea›"
+  //   ['A : ‹input type="textarea"›', "B : ‹textarea›", 'C : ‹input type="textbox"›', null],
+  //   "B : ‹textarea›"
   // ),
   // new Question(
   //   "What is the correct HTML for inserting an image?",
   //   [
-  //     '‹img alt="MyImage"›image.gif‹/img›',
-  //     '‹image src="image.gif" alt="MyImage"›',
-  //     '‹img href="image.gif" alt="MyImage"›',
-  //     '‹img src="image.gif" alt="MyImage"›',
+  //     'A : ‹img alt="MyImage"›image.gif‹/img›',
+  //     'B : ‹image src="image.gif" alt="MyImage"›',
+  //     'C : ‹img href="image.gif" alt="MyImage"›',
+  //     'D : ‹img src="image.gif" alt="MyImage"›',
   //   ],
-  //   '‹img src="image.gif" alt="MyImage"›'
+  //   'D : ‹img src="image.gif" alt="MyImage"›'
   // ),
   // new Question(
   //   "What is the correct HTML for inserting a background image?",
   //   [
-  //     '‹body style="background-image:url(background.gif)"›',
-  //     '‹body bg="background.gif"›',
-  //     '‹background img="background.gif"›',
+  //     'A : ‹body style="background-image:url(background.gif)"›',
+  //     'B : ‹body bg="background.gif"›',
+  //     'C : ‹background img="background.gif"›',
   //     null,
   //   ],
-  //   '‹body style="background-image:url(background.gif)"›'
+  //   'A : ‹body style="background-image:url(background.gif)"›'
   // ),
   // new Question(
   //   "An ‹iframe› is used to display a web page within a web page.",
-  //   ["False", "There is no such thing as an ‹iframe›", "True", null],
-  //   "True"
+  //   ["A : False", "B : There is no such thing as an ‹iframe›", "C : True", null],
+  //   "C : True"
   // ),
   // new Question(
   //   "HTML comments start with ‹!--and end with--›",
-  //   ["True", "False", null, null],
-  //   "True"
+  //   ["A : True", "B : False", null, null],
+  //   "A : True"
   // ),
   // new Question(
   //   "Block elements are normally displayed without starting a new line.",
-  //   ["False", "True", null, null],
-  //   "False"
+  //   ["A : False", "B : True", null, null],
+  //   "A : False"
   // ),
   // new Question(
   //   "Which HTML element defines the title of a document?",
-  //   ["‹head›", "‹title›", "‹meta›", null],
-  //   "‹title›"
+  //   ["A : ‹head›", "B : ‹title›", "C : ‹meta›", null],
+  //   "B : ‹title›"
   // ),
   // new Question(
   //   "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
-  //   ["alt", "longdesc", "src", "title"],
-  //   "alt"
+  //   ["A : alt", "B : longdesc", "C : src", "D : title"],
+  //   "A : alt"
   // ),
   // new Question(
   //   "Which doctype is correct for HTML5?",
   //   [
-  //     "‹!DOCTYPE html›",
-  //     '‹!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 5.0//EN" "http://www.w3.org/TR/html5/strict.dtd"›',
-  //     "‹!DOCTYPE HTML5›",
+  //     "A : ‹!DOCTYPE html›",
+  //     'B : ‹!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 5.0//EN" "http://www.w3.org/TR/html5/strict.dtd"›',
+  //     "C : ‹!DOCTYPE HTML5›",
   //     null,
   //   ],
-  //   "‹!DOCTYPE html›"
+  //   "A : ‹!DOCTYPE html›"
   // ),
   // new Question(
   //   "Which HTML element is used to specify a footer for a document or section?",
-  //   ["‹section›", "‹bottom›", "‹footer›", null],
-  //   "‹footer›"
+  //   ["A : ‹section›", "B : ‹bottom›", "C : ‹footer›", null],
+  //   "C : ‹footer›"
   // ),
   // new Question(
   //   "In HTML you can embed SVG elements directly into an HTML page.",
-  //   ["True", "False", null, null],
-  //   "True"
+  //   ["A : True", "B : False", null, null],
+  //   "A : True"
   // ),
   // new Question(
   //   "What is the correct HTML element for playing video files?",
-  //   ["‹video›", "‹media›", "‹movie›", null],
-  //   "‹video›"
+  //   ["A : ‹video›", "B : ‹media›", "C : ‹movie›", null],
+  //   "A : ‹video›"
   // ),
   // new Question(
   //   "What is the correct HTML element for playing audio files?",
-  //   ["‹sound›", "‹audio›", "‹mp3›", null],
-  //   "‹audio›"
+  //   ["A : ‹sound›", "B : ‹audio›", "C : ‹mp3›", null],
+  //   "B : ‹audio›"
   // ),
   // new Question(
   //   'The HTML global attribute, "contenteditable" is used to:',
   //   [
-  //     "Update content from the server",
-  //     "Specify whether the content of an element should be editable or not",
-  //     "Specifies a context menu for an element. The menu appears when a user right-clicks on the element",
-  //     "Return the position of the first found occurrence of content inside a string",
+  //     "A : Update content from the server",
+  //     "B : Specify whether the content of an element should be editable or not",
+  //     "C : Specifies a context menu for an element. The menu appears when a user right-clicks on the element",
+  //     "D : Return the position of the first found occurrence of content inside a string",
   //   ],
-  //   "Specify whether the content of an element should be editable or not"
+  //   "B : Specify whether the content of an element should be editable or not"
   // ),
   // new Question(
   //   "In HTML, onblur and onfocus are:",
-  //   ["HTML elements", "Event elements", "Style elements", null],
-  //   "Event elements"
+  //   ["A : HTML elements", "B : Event elements", "C : Style elements", null],
+  //   "B : Event elements"
   // ),
   // new Question(
   //   "Graphics defined by SVG is in which format",
-  //   ["CSS", "XML", "HTML", null],
-  //   "XML"
+  //   ["A : CSS", "B : XML", "C : HTML", null],
+  //   "B : XML"
   // ),
   // new Question(
   //   "The HTML ‹canvas› element is used to:",
   //   [
-  //     "display database records",
-  //     "manipulate data in MySQL",
-  //     "create draggable elements",
-  //     "draw graphics",
+  //     "A : display database records",
+  //     "B : manipulate data in MySQL",
+  //     "C : create draggable elements",
+  //     "D : draw graphics",
   //   ],
-  //   "draw graphics"
+  //   "D : draw graphics"
   // ),
   // new Question(
   //   "In HTML, which attribute is used to specify that an input field must be filled out?",
-  //   ["formvaildate", "validate", "placeholder", "required"],
-  //   "required"
+  //   ["A : formvaildate", "B : validate", "C : placeholder", "D : required"],
+  //   "D : required"
   // ),
   // new Question(
   //   "Which input type defines a slider control?",
-  //   ["range", "search", "slider", "controls"],
-  //   "range"
+  //   ["A : range", "B : search", "C : slider", "D : controls"],
+  //   "A : range"
   // ),
   // new Question(
   //   "Which HTML element is used to display a scalar measurement within a range?",
-  //   ["‹measure›", "‹range›", "‹gauge›", "‹meter›"],
-  //   "‹meter›"
+  //   ["A : ‹measure›", "B : ‹range›", "C : ‹gauge›", "D : ‹meter›"],
+  //   "D : ‹meter›"
   // ),
   // new Question(
   //   "Which HTML element defines navigation links?",
-  //   ["‹navigate›", "‹navigation›", "‹nav›", null],
-  //   "‹nav›"
+  //   ["A : ‹navigate›", "B : ‹navigation›", "C : ‹nav›", null],
+  //   "C : ‹nav›"
   // ),
   // new Question(
   //   "In HTML, what does the ‹aside› element define?",
   //   [
-  //     "Content aside from the page content",
-  //     "A navigation list to be shown at the left side of the page",
-  //     "The ASCⅡ character-set; to send information between computers on the internet",
+  //     "A : Content aside from the page content",
+  //     "B : A navigation list to be shown at the left side of the page",
+  //     "C : The ASCⅡ character-set; to send information between computers on the internet",
   //     null,
   //   ],
-  //   "Content aside from the page content"
+  //   "A : Content aside from the page content"
   // ),
   // new Question(
   //   "Which HTML element is used to specify a header for a document or section?",
-  //   ["‹head›", "‹header›", "‹top›", "‹section›"],
-  //   "‹header›"
+  //   ["A : ‹head›", "B : ‹header›", "C : ‹top›", "D : ‹section›"],
+  //   "B : ‹header›"
   // ),
 ];
 
 // 퀴즈 객체 생성
 const quiz = new Quiz(questions);
-
 
 // 문제 출력 함수
 function updateQuiz() {
@@ -303,16 +307,28 @@ function updateQuiz() {
   for (let i = 0; i <= 3; i++) {
     choice[i].innerHTML = quiz.questions[quiz.questionIndex].choice[i];
     // console.log(quiz.questions[quiz.questionIndex].choice[i])
-    if(quiz.questions[quiz.questionIndex].choice[i] == null) { choice[i].style.display = 'none'; }
-    else {choice[i].style.display = 'block';}
+
+    if (quiz.questions[quiz.questionIndex].choice[i] == null) {
+      choice[i].style.display = "none";
+    } else {
+      choice[i].style.display = "block";
+    }
   }
 
-  footer();
+  if (idx - 1 === 0) {
+    previousBtn.style.display = "none";
+  } else {
+    previousBtn.style.display = "inline-block";
+  }
+
+  // console.log(idx);
+  questionCount();
 }
 
-function footer() {
-  const footer = document.getElementById("footer");
-  footer.innerHTML =
+// 진행 중인 문제 수 확인
+function questionCount() {
+  const questionCount = document.getElementById("questionCount");
+  questionCount.innerHTML =
     "문제 " + (quiz.questionIndex + 1) + " / " + quiz.questions.length;
 }
 
@@ -322,12 +338,16 @@ const btn = document.querySelectorAll(".btn");
 function checkAnswer(i) {
   btn[i].addEventListener("click", function () {
     const answer = btn[i].innerText;
+
     // console.log(quiz.questions[quiz.questionIndex].answer)
+
+    const correct = quiz.questions[quiz.questionIndex].answer.substr(0, 1);
+
     if (quiz.correctAnswer(answer)) {
       alert("🟢정답입니다");
       quiz.score++;
     } else {
-      alert(`❌틀렸습니다. 정답은 ${quiz.questions[quiz.questionIndex].answer}입니다.`);
+      alert(`❌틀렸습니다. 정답은 "${correct}" 입니다.`);
     }
 
     if (quiz.questionIndex < quiz.questions.length - 1) {
@@ -339,22 +359,67 @@ function checkAnswer(i) {
   });
 }
 
+// 뒤로가기 버튼 추가
+const previousBtn = document.getElementById("previous");
+
+function showPrevious() {
+  if (quiz.questionIndex < quiz.questions.length) {
+    quiz.questionIndex--;
+    updateQuiz();
+  }
+}
+
+previousBtn.addEventListener("click", showPrevious);
+
 function result() {
   const quizDiv = document.getElementById("quiz");
+  // 정수로 점수 표현
   const per = parseInt((quiz.score * 100) / quiz.questions.length);
+
   const txt =
     "<h1>결과</h1>" +
-    '<h2>당신의 점수: ' +
+    "<h2>당신의 점수: " +
+    per +
+    "점 ( " +
     quiz.score +
     "/" +
     quiz.questions.length +
-    "<br><br>" +
-    per +
-    "점" +
-    "</h2>";
+    " )" +
+    "</h2>" +
+    `<span>
+    <button id="submitbutton" class="result-btn"> 결과확인 </button>
+    </span>
+    <span>
+    <button id="retry" class="result-btn"> 재도전 </button>
+    </span></br>`;
 
   quizDiv.innerHTML = txt;
 
+  const submitBtn = document.getElementById("submitbutton");
+
+  submitBtn.addEventListener("click", showResult);
+
+  function showResult(i) {
+    // const answers = checkAnswer(i).innerText;
+    // const answerDisplay = answers[quiz.questionIndex];
+    // if (quiz.correctAnswer(answers)) {
+    //   answerDisplay.style.color = 'blue';
+    // } else {
+    //   answerDisplay.style.color = 'red';
+    // }
+  }
+  
+  // 재시작 버튼
+  const retryBtn = document.getElementById("retry");
+
+  retryBtn.addEventListener("click", retry);
+
+  function retry() {
+    if (quiz.questionIndex + 1 === quiz.questions.length) {
+      window.location.reload(true);
+    }
+  }
+  console.log(quiz.questions[0]);
 }
 
 for (let i = 0; i < btn.length; i++) {
