@@ -21,9 +21,9 @@ const questions = [
   new Question(
     "What does HTML stand for?",
     [
-      "A : Hyper Text Markup Language", 
-      "B : Hyperlinks and Text Markup Language", 
-      "C : Home Tool Markup Language", 
+      "A : Hyper Text Markup Language",
+      "B : Hyperlinks and Text Markup Language",
+      "C : Home Tool Markup Language",
       null,
     ],
     "A : Hyper Text Markup Language"
@@ -31,15 +31,15 @@ const questions = [
   new Question(
     "Who is marking the Web standards?",
     [
-      "A : Microsoft", 
-      "B : Google", 
-      "C : The World Wide Web Consortium", 
-      "D : Mozilla", 
+      "A : Microsoft",
+      "B : Google",
+      "C : The World Wide Web Consortium",
+      "D : Mozilla",
     ],
     "C : The World Wide Web Consortium"
   ),
   new Question(
-    "Choose the correct HTML element for the largest heading",
+    "Choose the correct HTML element for the largest heading.",
     ["A : ‹h6›", "B : ‹heading›", "C : ‹h1›", "D : ‹head›"],
     "C : ‹h1›"
   ),
@@ -59,12 +59,12 @@ const questions = [
   //   'C : ‹body style="background-color:yellow"›'
   // ),
   // new Question(
-  //   "Choose the correct HTML element to define important text",
+  //   "Choose the correct HTML element to define important text.",
   //   ["A : ‹b›", "B : ‹i›", "C : ‹important›", "D : ‹strong›"],
   //   "D : ‹strong›"
   // ),
   // new Question(
-  //   "Choose the correct HTML element to define emphasized text",
+  //   "Choose the correct HTML element to define emphasized text.",
   //   ["A : ‹i›", "B : ‹italic›", "C : ‹em›", null],
   //   "C : ‹em›"
   // ),
@@ -306,7 +306,6 @@ function updateQuiz() {
   // 선택 출력
   for (let i = 0; i <= 3; i++) {
     choice[i].innerHTML = quiz.questions[quiz.questionIndex].choice[i];
-    // console.log(quiz.questions[quiz.questionIndex].choice[i])
 
     if (quiz.questions[quiz.questionIndex].choice[i] == null) {
       choice[i].style.display = "none";
@@ -320,8 +319,8 @@ function updateQuiz() {
   } else {
     previousBtn.style.display = "inline-block";
   }
-    submitBtn.style.display = "none";
-    retryBtn.style.display = "none";
+  submitBtn.style.display = "none";
+  retryBtn.style.display = "none";
 
   questionCount();
 }
@@ -341,18 +340,18 @@ function checkAnswer(i) {
 
   function clickAnswer() {
     const answer = btn[i].innerText;
-  
+
     // console.log(quiz.questions[quiz.questionIndex].answer)
-  
+
     const correct = quiz.questions[quiz.questionIndex].answer.substr(0, 1);
-  
+
     if (quiz.correctAnswer(answer)) {
       alert("🟢정답입니다");
       quiz.score++;
     } else {
       alert(`❌틀렸습니다. 정답은 "${correct}" 입니다.`);
     }
-  
+
     if (quiz.questionIndex < quiz.questions.length - 1) {
       quiz.questionIndex++;
       updateQuiz();
@@ -374,12 +373,11 @@ function showPrevious() {
 
 previousBtn.addEventListener("click", showPrevious);
 
-
 function result() {
   const quizDiv = document.getElementById("quiz");
   // 정수로 점수 표현
   const per = parseInt((quiz.score * 100) / quiz.questions.length);
-  
+
   const txt =
     "<h1>결과</h1>" +
     "<h2>당신의 점수: " +
@@ -389,9 +387,9 @@ function result() {
     "/" +
     quiz.questions.length +
     " )" +
-    "</h2>" ;
+    "</h2>";
 
-    quizDiv.innerHTML = txt;
+  quizDiv.innerHTML = txt;
 
   submitBtn.style.display = "inline-block";
   retryBtn.style.display = "inline-block";
@@ -404,19 +402,15 @@ submitBtn.addEventListener("click", showResult);
 
 function showResult() {
   const answerCheck = document.getElementById("result");
+  const idx = quiz.questionIndex + 1;
+
+  for (let i = 0; i <= 3; i++) {
+    answerCheck.innerHTML =
+    `<h3>문제 ${idx}: </h3>` +
+    questions[idx].text +
+    "</br>" +
+    questions[idx].choice;}
   
-  // checkAnswer.innerHTML = questions;
-  for ( let idx = 1; idx < questions.length; idx++ ) {
-    const txt = 
-    `<h3>문제 ${idx}:</h3>` +
-    questions[idx].text + "</br>" +
-    questions[idx].choice + "</br>" ;
-
-    answerCheck.innerHTML = txt;
-  }
-
-  // document.write(question); 
-  console.log(questions.length);
 }
 
 // 재시작 버튼
